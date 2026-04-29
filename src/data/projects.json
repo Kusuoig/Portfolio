@@ -1,0 +1,39 @@
+[
+  {
+    "id": "enterprise-network-arch",
+    "title": "Arquitectura de Red Empresarial OSPF",
+    "role": "Network Engineer",
+    "shortDescription": "Diseño y despliegue de una infraestructura de red corporativa altamente disponible utilizando OSPF y protocolos de capa 2.",
+    "fullDescription": "Diseñamos una arquitectura jerárquica de 3 capas para una empresa con múltiples sucursales locales. Se estableció routing dinámico con OSPF para rápida convergencia, optimizando el tráfico interno. Además, aplicamos políticas de seguridad (ACLs, Port Security) previniendo intrusiones locales al 99.9%.",
+    "technicalHighlights": [
+      "Configuración de áreas OSPF multi-sitio y sumarización de rutas.",
+      "Seguridad en Capa 2: Spanning Tree Protocol (RSTP), PortFast y BPDU Guard.",
+      "Implementación avanzada de VLANs con enrutamiento Inter-VLAN (Router-on-a-Stick).",
+      "Listas de Control de Acceso (ACLs) extendidas para segmentar departamentos."
+    ]
+  },
+  {
+    "id": "e-commerce-dashboard",
+    "title": "E-Commerce Admin Dashboard",
+    "role": "Frontend Developer",
+    "shortDescription": "Panel de administración modular y escalable construido con React y métricas en tiempo real.",
+    "fullDescription": "Colaboré en la modernización de la plataforma interna de una tienda en línea. Reestructuré la capa visual a una arquitectura basada en componentes reutilizables utilizando React y Tailwind CSS, disminuyendo en un 40% el tamaño del bundle. Se integraron gráficos asíncronos para visualización de ventas.",
+    "technicalHighlights": [
+      "Reducción sustancial del re-rendering mediante useMemo y useCallback.",
+      "Gestión local de estado global sin Redux usando React Context y Hooks personalizados.",
+      "Diseño 100% responsivo bajo la filosofía Mobile-First y Flexbox/Grid avanzados."
+    ]
+  },
+  {
+    "id": "portfolio-dev",
+    "title": "Warm Minimalist Portfolio",
+    "role": "Full Stack / UI Specialist",
+    "shortDescription": "Este mismo portafolio, utilizando la arquitectura de islas con Astro y React.",
+    "fullDescription": "Desarrollé mi portafolio profesional maximizando la puntuación en Lighthouse. Utilicé Astro para pre-renderizar los HTML estáticos brindando una carga casi instantánea y un TTFB excelente. Los módulos interactivos críticos se delegaron a React con animaciones ricas usando Framer Motion y GSAP.",
+    "technicalHighlights": [
+      "Islands Architecture: Hidratación parcial con Astro y React.",
+      "Sistema de temas (Dark/Light) persistente gestionado sin FOUC.",
+      "Micro-interacciones fluidas a 60fps cortesía de Framer Motion 'layoutId'."
+    ]
+  }
+]

@@ -1,0 +1,41 @@
+---
+import InteractiveTechGrid from '../components/InteractiveTechGrid.tsx';
+---
+
+<section id="stack" class="py-24 border-t border-white/5">
+  <div class="mb-16 text-center max-w-2xl mx-auto">
+    <h2 class="text-[clamp(2.5rem,5vw,3.5rem)] font-display font-bold text-text-main mb-4">
+      <span class="text-primary italic">Tech</span> Stack
+    </h2>
+    <p class="text-text-main/60 font-body text-lg">
+      Herramientas y tecnologías que utilizo para construir soluciones robustas y escalables.
+    </p>
+  </div>
+
+  <InteractiveTechGrid client:visible />
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  
+  gsap.registerPlugin(ScrollTrigger);
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.fromTo("#stack", 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1.2, 
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#stack",
+          start: "top 85%",
+          end: "bottom 15%",
+          toggleActions: "play reverse play reverse",
+        }
+      }
+    );
+  });
+</script>

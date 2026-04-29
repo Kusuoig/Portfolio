@@ -15,15 +15,43 @@
   --color-ink: #1C1917;
 
   /* --- ASIGNACIÓN DE SEMÁNTICA --- */
-  --color-background: var(--color-obsidian);
-  --color-surface: var(--color-card-dark);
-  --color-primary: var(--color-amber-gold);
-  --color-secondary: var(--color-terracotta);
-  --color-text-main: var(--color-bone);
+  --color-background: var(--bg-color);
+  --color-surface: var(--surface-color);
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-text-main: var(--text-color);
 
   /* --- TIPOGRAFÍA (Inspirada en tu Figma) --- */
   --font-display: "Syne", sans-serif;
   --font-body: "Plus Jakarta Sans", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  /* Default: Dark Theme */
+  :root, :root.dark {
+    --bg-color: var(--color-obsidian);
+    --surface-color: var(--color-card-dark);
+    --text-color: var(--color-bone);
+    --primary-color: var(--color-amber-gold);
+    --secondary-color: var(--color-terracotta);
+  }
+  
+  /* Light Theme */
+  :root.light {
+    --bg-color: var(--color-cream);
+    --surface-color: var(--color-card-light);
+    --text-color: var(--color-ink);
+    --primary-color: var(--color-deep-bronze);
+    --secondary-color: var(--color-terracotta);
+  }
+
+  html {
+    color-scheme: dark;
+  }
+  
+  html.light {
+    color-scheme: light;
+  }
 }
 

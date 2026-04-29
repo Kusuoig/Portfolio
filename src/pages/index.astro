@@ -1,17 +1,53 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Hero from '../sections/Hero.astro';
+import About from '../sections/About.astro';
+import TechStack from '../sections/TechStack.astro';
+import Contact from '../sections/Contact.astro';
+import ProjectGrid from '../components/ProjectGrid.tsx';
+import CiscoVisualizer from '../components/CiscoVisualizer.tsx';
+import ScrollIndicator from '../components/ScrollIndicator.tsx';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Diego | Senior Full Stack & UI/UX">
+	<ScrollIndicator client:load />
+
+	<Hero />
+	
+	<About />
+
+	<section id="proyectos" class="mt-20">
+		<ProjectGrid client:load />
+	</section>
+
+	
+
+	<TechStack />
+
+	<Contact />
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  
+  gsap.registerPlugin(ScrollTrigger);
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.fromTo("#proyectos", 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1.2, 
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#proyectos",
+          start: "top 85%",
+          end: "bottom 15%",
+          toggleActions: "play reverse play reverse",
+        }
+      }
+    );
+  });
+</script>
