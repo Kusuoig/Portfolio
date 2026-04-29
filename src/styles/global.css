@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- PALETA WARM DARK (Default) --- */
+  --color-obsidian: #0F0B09;
+  --color-card-dark: #1A1412;
+  --color-bone: #F3F0EF;
+  --color-amber-gold: #F59E0B;
+  --color-terracotta: #B45309;
+
+  /* --- PALETA WARM LIGHT --- */
+  --color-cream: #FFFBEB;
+  --color-card-light: #FEF3C7;
+  --color-deep-bronze: #78350F;
+  --color-ink: #1C1917;
+
+  /* --- ASIGNACIÓN DE SEMÁNTICA --- */
+  --color-background: var(--color-obsidian);
+  --color-surface: var(--color-card-dark);
+  --color-primary: var(--color-amber-gold);
+  --color-secondary: var(--color-terracotta);
+  --color-text-main: var(--color-bone);
+
+  /* --- TIPOGRAFÍA (Inspirada en tu Figma) --- */
+  --font-display: "Syne", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
