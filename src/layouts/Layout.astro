@@ -5,6 +5,7 @@ import ThemeToggle from "../components/ThemeToggle";
 import LanguageToggle from "../components/LanguageToggle";
 import MouseParticles from "../components/MouseParticles.astro";
 import CustomCursor from "../components/CustomCursor";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title: string;
@@ -127,5 +128,6 @@ const { title } = Astro.props;
         requestAnimationFrame(raf);
       });
     </script>
+    <Analytics />
   </body>
 </html>

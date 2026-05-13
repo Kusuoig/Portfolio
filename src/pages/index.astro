@@ -1,52 +1,51 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../sections/Hero.astro';
-import About from '../sections/About.astro';
-import TechStack from '../sections/TechStack.astro';
-import Contact from '../sections/Contact.astro';
-import ProjectGrid from '../components/ProjectGrid.tsx';
-import CiscoVisualizer from '../components/CiscoVisualizer.tsx';
-import ScrollIndicator from '../components/ScrollIndicator.tsx';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../sections/Hero.astro";
+import About from "../sections/About.astro";
+import TechStack from "../sections/TechStack.astro";
+import Contact from "../sections/Contact.astro";
+import ProjectGrid from "../components/ProjectGrid";
+import CiscoVisualizer from "../components/CiscoVisualizer";
+import ScrollIndicator from "../components/ScrollIndicator";
 ---
 
 <Layout title="Diego | Senior Full Stack & UI/UX">
-	<ScrollIndicator client:load />
+  <ScrollIndicator client:load />
 
-	<Hero />
-	
-	<About />
+  <Hero />
 
-	<section id="proyectos" class="mt-20">
-		<ProjectGrid client:load />
-	</section>
+  <About />
 
-	
+  <section id="proyectos" class="mt-20">
+    <ProjectGrid client:load />
+  </section>
 
-	<TechStack />
+  <TechStack />
 
-	<Contact />
+  <Contact />
 </Layout>
 
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  
+
   gsap.registerPlugin(ScrollTrigger);
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    gsap.fromTo("#proyectos", 
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.fromTo(
+      "#proyectos",
       { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1.2, 
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
         ease: "power3.out",
         scrollTrigger: {
           trigger: "#proyectos",
           start: "top 85%",
           end: "bottom 15%",
           toggleActions: "play reverse play reverse",
-        }
+        },
       }
     );
   });
