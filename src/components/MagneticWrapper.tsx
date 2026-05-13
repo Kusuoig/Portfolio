@@ -30,8 +30,8 @@ export default function MagneticWrapper({ children, className = "" }: MagneticWr
     const middleY = clientY - (top + height / 2);
     
     // Incrementa o reduce el float (0.3) ajustando la fuerza magnética
-    x.set(middleX * 0.4);
-    y.set(middleY * 0.4);
+    x.set(middleX * 0.15);
+    y.set(middleY * 0.15);
   };
 
   const handleMouseLeave = () => {

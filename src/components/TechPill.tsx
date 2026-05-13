@@ -26,7 +26,7 @@ export default function TechPill({ label, tooltipText }: TechPillProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-[200px] bg-surface border border-white/10 text-text-main text-xs font-body p-2 rounded shadow-xl z-10"
+            className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-50 bg-surface border border-white/10 text-text-main text-xs font-body p-2 rounded shadow-xl z-10"
           >
             {tooltipText}
             {/* Pequeño triángulo para el tooltip */}

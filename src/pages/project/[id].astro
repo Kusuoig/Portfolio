@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectDetailView from '../../components/ProjectDetailView'; // Importa el nuevo componente
+import projectsDataRaw from '../../data/projects.json';
+import type { Project } from '../../data/interface';
+
+export function getStaticPaths() {
+  const projectsData = projectsDataRaw as Project[];
+  return projectsData.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props as { project: Project };
+
+---
+
+<Layout title={`${project.title} - Portfolio`}>
+  {/* Usamos client:load para que React tome el control de las animaciones 
+     de Framer Motion y los hovers dinámicos 
+  */}
+  <ProjectDetailView client:load project={project} />
+</Layout>

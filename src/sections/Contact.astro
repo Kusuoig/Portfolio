@@ -5,112 +5,162 @@ const year = new Date().getFullYear();
 
 <section id="contacto" class="py-24 border-t border-white/5 relative">
   <div class="max-w-3xl mx-auto flex flex-col items-center text-center">
-    
     <div class="font-mono text-primary mb-8 bg-primary/10 px-4 py-2 rounded">
       &gt; contact.init()
     </div>
 
-    <h2 class="text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold text-text-main mb-6">
-      Let's build something <br/>
+    <h2
+      class="text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold text-text-main mb-6"
+      data-i18n="contact.title"
+    >
+      Let's build something <br />
       <span class="text-secondary italic">meaningful.</span>
     </h2>
 
-    <p class="text-lg text-text-main/70 font-body mb-12 max-w-xl">
-      Actualmente abierto a nuevas oportunidades y colaboraciones. Si tienes un proyecto en mente o simplemente quieres decir "hola", mi bandeja de entrada está disponible.
+    <p
+      class="text-lg text-text-main/70 font-body mb-12 max-w-xl"
+      data-i18n="contact.desc"
+    >
+      Currently open to new opportunities and collaborations. If you have a
+      project in mind or just want to say "hi", my inbox is open.
     </p>
 
     <!-- Enlaces Directos -->
     <div class="flex flex-wrap justify-center gap-6 mb-16 font-mono">
-      <a href="mailto:hola@dominio.com" class="text-text-main/80 hover:text-primary transition-colors flex items-center gap-2 group">
+      <a
+        href="mailto:hola@dominio.com"
+        class="text-text-main/80 hover:text-primary transition-colors flex items-center gap-2 group"
+      >
         <span class="text-primary group-hover:animate-pulse">@</span>
         Email
       </a>
       <span class="text-white/20">|</span>
-      <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer" class="text-text-main/80 hover:text-primary transition-colors flex items-center gap-2 group">
+      <a
+        href="https://linkedin.com/in/tu-perfil"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-text-main/80 hover:text-primary transition-colors flex items-center gap-2 group"
+      >
         <span class="text-primary group-hover:animate-pulse">in</span>
         LinkedIn
       </a>
       <span class="text-white/20">|</span>
-      <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="text-text-main/80 hover:text-primary transition-colors flex items-center gap-2 group">
+      <a
+        href="https://github.com/tu-usuario"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-text-main/80 hover:text-primary transition-colors flex items-center gap-2 group"
+      >
         <span class="text-primary group-hover:animate-pulse">/</span>
         GitHub
       </a>
     </div>
 
-    <!-- Formulario Minimalista -->
-    <form class="w-full max-w-lg flex flex-col gap-8 text-left mb-24">
+    <!-- Formulario Minimalista (Usando FormSubmit) -->
+    <form
+      action="https://formsubmit.co/diegovps134@gmail.com"
+      method="POST"
+      class="w-full max-w-lg flex flex-col gap-8 text-left mb-24"
+    >
+      <!-- Campos Anti-Spam y Configuración de FormSubmit -->
+      <input type="text" name="_honey" style="display:none" />
+      <input type="hidden" name="_template" value="box" />
+
       <div class="relative group">
-        <input 
-          type="text" 
-          id="name" 
-          placeholder=" " 
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder=" "
           required
           class="w-full bg-transparent border-b border-primary/30 py-3 text-text-main font-body focus:outline-none focus:border-secondary transition-colors peer"
         />
-        <label for="name" class="absolute left-0 top-3 text-text-main/50 font-mono text-sm transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-secondary pointer-events-none">
-          Nombre_
+        <label
+          for="name"
+          class="absolute left-0 top-3 text-text-main/50 font-mono text-sm transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-secondary pointer-events-none"
+          data-i18n="contact.name"
+        >
+          Name_
         </label>
       </div>
 
       <div class="relative group">
-        <input 
-          type="email" 
-          id="email" 
-          placeholder=" " 
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder=" "
           required
           class="w-full bg-transparent border-b border-primary/30 py-3 text-text-main font-body focus:outline-none focus:border-secondary transition-colors peer"
         />
-        <label for="email" class="absolute left-0 top-3 text-text-main/50 font-mono text-sm transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-secondary pointer-events-none">
+        <label
+          for="email"
+          class="absolute left-0 top-3 text-text-main/50 font-mono text-sm transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-secondary pointer-events-none"
+          data-i18n="contact.email"
+        >
           Email_
         </label>
       </div>
 
       <div class="relative group">
-        <textarea 
-          id="message" 
-          rows="4" 
-          placeholder=" " 
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder=" "
           required
           class="w-full bg-transparent border-b border-primary/30 py-3 text-text-main font-body resize-none focus:outline-none focus:border-secondary transition-colors peer"
         ></textarea>
-        <label for="message" class="absolute left-0 top-3 text-text-main/50 font-mono text-sm transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-secondary pointer-events-none">
-          Mensaje_
+        <label
+          for="message"
+          class="absolute left-0 top-3 text-text-main/50 font-mono text-sm transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-secondary pointer-events-none"
+          data-i18n="contact.msg"
+        >
+          Message_
         </label>
       </div>
 
-      <button type="submit" class="self-end bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-background px-8 py-3 rounded transition-colors font-mono text-sm mt-4">
-        enviar()
+      <button
+        type="submit"
+        class="self-end bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-background px-8 py-3 rounded transition-colors font-mono text-sm mt-4"
+        data-i18n="contact.btn"
+      >
+        send()
       </button>
     </form>
   </div>
 </section>
 
 <!-- Footer Minimalista -->
-<footer class="py-8 border-t border-white/5 text-center text-text-main/50 font-mono text-xs">
-  <p>Built with Astro & ❤️ in Oaxaca</p>
-  <p class="mt-2 text-text-main/30">&copy; {year} Diego. All rights reserved.</p>
+<footer
+  class="py-8 border-t border-white/5 text-center text-text-main/50 font-mono text-xs"
+>
+  <p class="mt-2 text-text-main/30">
+    &copy; {year} Diego. All rights reserved.
+  </p>
 </footer>
 
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  
+
   gsap.registerPlugin(ScrollTrigger);
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    gsap.fromTo("#contacto", 
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.fromTo(
+      "#contacto",
       { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1.2, 
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
         ease: "power3.out",
         scrollTrigger: {
           trigger: "#contacto",
           start: "top 85%",
           end: "bottom 15%",
           toggleActions: "play reverse play reverse",
-        }
+        },
       }
     );
   });

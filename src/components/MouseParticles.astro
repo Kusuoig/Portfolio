@@ -1,0 +1,115 @@
+---
+// src/components/MouseParticles.astro
+---
+
+<div
+  id="particle-container"
+  class="pointer-events-none fixed inset-0 z-100 overflow-hidden"
+  aria-hidden="true"
+>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("particle-container");
+    if (!container) return;
+
+    let lastX = 0;
+    let lastY = 0;
+    const distanceThreshold = 18; // Un poco más sensible para un trazo más continuo
+
+    let lastDrawTime = 0;
+    const throttleMs = 8; // Interpolación más suave de tiempo
+
+    function createParticle(x: number, y: number) {
+      const particle = document.createElement("div");
+
+      // Paleta minimalista cálida del proyecto: Amber Gold, Terracotta, y bronces profundos
+      const warmColors = [
+        "#ee78b7",
+        "#e54f9a",
+        "#d32f79",
+        "#b6205f",
+        "#971d4f",
+      ];
+      const color = warmColors[Math.floor(Math.random() * warmColors.length)];
+
+      // Tamaños más sutiles y elegantes para un look "smooth"
+      const size = Math.random() * 20 + 20;
+
+      // Rotación inicial aleatoria suave
+      const rotation = Math.random() * 90;
+      // Duración variable entre 1 y 1.5 segundos para un fade out orgánico
+      const duration = Math.random() * 500 + 1000;
+
+      // Animación inicial (punto de anclaje)
+      particle.style.cssText = `
+        position: absolute;
+        left: ${x}px;
+        top: ${y}px;
+        width: ${size}px;
+        height: ${size}px;
+        background-color: ${color};
+        border-radius: 1px; /* Suaviza ligeramente las esquinas del cuadrado */
+        transform: translate(-50%, -50%) rotate(${rotation}deg);
+        opacity: 0.5; /* Opacidad más baja para no saturar visualmente */
+        pointer-events: none;
+        box-shadow: 0 0 12px ${color}60; /* Glow suave translúcido */
+        transition: transform ${duration}ms cubic-bezier(0.25, 1, 0.5, 1), opacity ${duration}ms ease-out;
+      `;
+
+      container!.appendChild(particle);
+
+      // Siguiente frame: Dispersión suave hacia arriba (efecto ceniza o chispa flotante)
+      requestAnimationFrame(() => {
+        // Se mueven sutilmente hacia arriba en el eje Y y rotan un poco más
+        const liftY = Math.random() * -60 - 40;
+        particle.style.transform = `translate(-50%, calc(-50% + ${liftY}px)) rotate(${
+          rotation + 45
+        }deg) scale(0)`;
+        particle.style.opacity = "0";
+      });
+
+      // Limpiar DOM de manera coordinada con la duración de la animación
+      setTimeout(() => {
+        particle.remove();
+      }, duration);
+    }
+
+    function onMouseMove(e: MouseEvent) {
+      // Solo disparar partículas si el mouse está sobre la sección hero (en el home)
+      const heroSection = document.getElementById("hero");
+      if (heroSection) {
+        const rect = heroSection.getBoundingClientRect();
+        if (e.clientY < rect.top || e.clientY > rect.bottom) {
+          return;
+        }
+      }
+
+      // Detener las partículas en la vista del proyecto si el mouse entra a la sección "How and Why"
+      const projectContent = document.getElementById("project-content");
+      if (projectContent) {
+        const contentRect = projectContent.getBoundingClientRect();
+        if (e.clientY >= contentRect.top) {
+          return;
+        }
+      }
+
+      const now = performance.now();
+      const dx = e.clientX - lastX;
+      const dy = e.clientY - lastY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (now - lastDrawTime > throttleMs && distance > distanceThreshold) {
+        requestAnimationFrame(() => {
+          createParticle(e.clientX, e.clientY);
+        });
+        lastX = e.clientX;
+        lastY = e.clientY;
+        lastDrawTime = now;
+      }
+    }
+
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
+  });
+</script>

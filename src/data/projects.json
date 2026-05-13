@@ -1,39 +1,59 @@
 [
   {
-    "id": "enterprise-network-arch",
-    "title": "Arquitectura de Red Empresarial OSPF",
-    "role": "Network Engineer",
-    "shortDescription": "Diseño y despliegue de una infraestructura de red corporativa altamente disponible utilizando OSPF y protocolos de capa 2.",
-    "fullDescription": "Diseñamos una arquitectura jerárquica de 3 capas para una empresa con múltiples sucursales locales. Se estableció routing dinámico con OSPF para rápida convergencia, optimizando el tráfico interno. Además, aplicamos políticas de seguridad (ACLs, Port Security) previniendo intrusiones locales al 99.9%.",
-    "technicalHighlights": [
-      "Configuración de áreas OSPF multi-sitio y sumarización de rutas.",
-      "Seguridad en Capa 2: Spanning Tree Protocol (RSTP), PortFast y BPDU Guard.",
-      "Implementación avanzada de VLANs con enrutamiento Inter-VLAN (Router-on-a-Stick).",
-      "Listas de Control de Acceso (ACLs) extendidas para segmentar departamentos."
+    "id": "anfitr-app",
+    "title": "Anfitr",
+    "role": "Full Stack Developer",
+    "shortDescription": "Aplicación web Full Stack para gestionar usuarios y reservas de forma eficiente en una arquitectura moderna.",
+    "description": "01. La Visión\nEl mercado inmobiliario tradicional es rígido, y el turístico, efímero. En anfitr, hemos diseñado una solución que habita en el espacio intermedio: la media estancia. Nuestra visión es eliminar las barreras para estudiantes y profesionales en movilidad, ofreciendo una plataforma donde la flexibilidad no sacrifique la seguridad. No es solo una app de rentas; es un ecosistema digital diseñado para que mudarse de ciudad por unos meses sea tan sencillo como reservar una habitación de hotel, pero con la calidez y legalidad de un hogar.\n\n02. Ecosistema de 3 Roles\nPara garantizar un entorno de confianza en estancias prolongadas, la lógica de negocio de anfitr orquesta tres perfiles con permisos y flujos de trabajo specializados:\n1. Anfitrión: Propietarios que listan habitaciones o departamentos. Cuentan con un panel avanzado para gestionar calendarios de disponibilidad por semanas/meses, verificar perfiles de inquilinos y automatizar el cobro de rentas recurrentes.\n2. Inquilino: Estudiantes o profesionales que buscan flexibilidad. Pueden filtrar por proximidad a universidades, gestionar su documentación de estancia y realizar pagos seguros de depósitos y mensualidades.\n3. Moderador: Un rol administrativo esencial que audita la veracidad de los inmuebles y la identidad de los usuarios, asegurando que cada listado cumpla con los estándares de \"listo para vivir\".\n\n03. Arquitectura & Estrategia\nRenderizado Híbrido con Angular 20 (SSR): Implementamos las últimas capacidades de Angular 20 con Server-Side Rendering para garantizar velocidad de carga ultra rápida y un SEO optimizado que permite indexar cada propiedad en buscadores globales.\nGestión de Pagos Recurrentes: Integración de lógica avanzada para el manejo de depósitos en garantía y suscripciones de renta automatizadas, reduciendo la fricción administrativa.\nEscalabilidad Full Stack: El backend en Node.js y MongoDB permite un modelado de datos dinámico, facilitando la gestión de metadatos complejos como servicios incluidos, zonas de estudio y validaciones de salud del sistema en tiempo real.",
+    "githubUrl": "https://github.com/Kusuoig/anfitr",
+    "technologies": [
+      "Angular",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "Docker"
+    ],
+    "images": [
+      "/assets/anfitr/home_image.png",
+      "/assets/anfitr/room_image.png",
+      "/assets/anfitr/pay_image.png"
     ]
   },
   {
-    "id": "e-commerce-dashboard",
-    "title": "E-Commerce Admin Dashboard",
-    "role": "Frontend Developer",
-    "shortDescription": "Panel de administración modular y escalable construido con React y métricas en tiempo real.",
-    "fullDescription": "Colaboré en la modernización de la plataforma interna de una tienda en línea. Reestructuré la capa visual a una arquitectura basada en componentes reutilizables utilizando React y Tailwind CSS, disminuyendo en un 40% el tamaño del bundle. Se integraron gráficos asíncronos para visualización de ventas.",
-    "technicalHighlights": [
-      "Reducción sustancial del re-rendering mediante useMemo y useCallback.",
-      "Gestión local de estado global sin Redux usando React Context y Hooks personalizados.",
-      "Diseño 100% responsivo bajo la filosofía Mobile-First y Flexbox/Grid avanzados."
+    "id": "cisco-pkt-designer",
+    "title": "Cisco PKT Designer",
+    "role": "Backend / Tooling Developer",
+    "shortDescription": "Diseñador visual de topologías de red con generación automática de configuraciones CLI para dispositivos Cisco.",
+    "description": "01. El Desafío Técnico\nLa gestión de infraestructuras de red ha dependido históricamente de interfaces de línea de comandos (CLI) que, aunque potentes, resultan ineficientes frente a tareas masivas y repetitivas. Identifiqué un problema crítico: la configuración manual de arquitecturas complejas generaba cuellos de botella operativos donde el error humano y la fatiga técnica consumían horas de trabajo productivo. Mi visión fue desarrollar una capa de software que tradujera la rigidez de la consola en una experiencia digital fluida, precisa y automatizada.\n\n02. Ingeniería de Interfaz y Conectividad\nMi contribución central se enfocó en el desarrollo de la arquitectura funcional entre el cliente y el servidor. Diseñé una interfaz web profesional inspirada en los dashboards de Cisco, implementando una lógica de comunicación fluida entre JavaScript y Flask. Desarrollé el sistema de captura de datos mediante formularios dinámicos y validaciones en tiempo real que previenen conflictos de IP y errores de máscara antes de que la información llegue al servidor.\n\n03. Arquitectura y Puente de Datos\nInterconexión JS-Flask: Implementé el flujo de datos asíncrono para asegurar que cada interacción en la UI se tradujera en una estructura JSON válida, procesable por el motor lógico del backend.\nUX Funcional: Diseñé la experiencia de usuario para que fuera reactiva, permitiendo la selección visual de dispositivos y la configuración de protocolos complejos de forma intuitiva, abstrayendo la complejidad técnica de la CLI.\nGeneración de Entregables: Programé la lógica necesaria para que la interfaz no solo recolecte datos, sino que orqueste la descarga de scripts de configuración perfectos y archivos .pkt listos para su despliegue.\n\n04. El Impacto\nGracias a la robustez de la interfaz y su correcta integración con el backend, logramos reducir el tiempo de resolución de ejercicios de red de 4 horas a solo 30 minutos. Este proyecto demostró mi capacidad para construir puentes eficientes entre el diseño visual y la lógica de negocio, priorizando siempre la precisión técnica y la productividad del usuario.",
+    "githubUrl": "https://github.com/omarnataren/cisco-pkt",
+    "technologies": [
+      "Python",
+      "Flask",
+      "JavaScript"
+    ],
+    "images": [
+      "/assets/cisco/topology_image.png",
+      "/assets/cisco/vlans_image.png",
+      "/assets/cisco/config_image.png"
     ]
   },
   {
-    "id": "portfolio-dev",
-    "title": "Warm Minimalist Portfolio",
-    "role": "Full Stack / UI Specialist",
-    "shortDescription": "Este mismo portafolio, utilizando la arquitectura de islas con Astro y React.",
-    "fullDescription": "Desarrollé mi portafolio profesional maximizando la puntuación en Lighthouse. Utilicé Astro para pre-renderizar los HTML estáticos brindando una carga casi instantánea y un TTFB excelente. Los módulos interactivos críticos se delegaron a React con animaciones ricas usando Framer Motion y GSAP.",
-    "technicalHighlights": [
-      "Islands Architecture: Hidratación parcial con Astro y React.",
-      "Sistema de temas (Dark/Light) persistente gestionado sin FOUC.",
-      "Micro-interacciones fluidas a 60fps cortesía de Framer Motion 'layoutId'."
+    "id": "safe-rent-app",
+    "title": "Safe Rent",
+    "role": "Mobile Developer",
+    "shortDescription": "App móvil multiplataforma para rentar y comprar artículos, garantizando transacciones rápidas y seguras.",
+    "description": "01. La Visión\nEn una era de consumo consciente, la propiedad está dando paso al acceso. Safe Rent nació para resolver la desconfianza inherente al mercado de artículos usados y alquileres entre particulares. Mi objetivo fue profesionalizar la economía circular, creando un entorno blindado donde rentar un equipo especializado o comprar un artículo de segunda mano sea tan seguro y sencillo como una transacción bancaria, eliminando el riesgo de fraude mediante tecnología de punta.\n\n02. Ecosistema de Confianza\nPara garantizar transacciones sin fricción, diseñé una lógica de negocio que equilibra dos perfiles clave bajo un estándar de seguridad riguroso:\n1. Propietarios: Gestores de inventario que pueden monetizar sus pertenencias en segundos, con control total sobre precios, depósitos de garantía y estados de disponibilidad.\n2. Usuarios: Clientes que acceden a un marketplace verificado con filtros avanzados por categoría y estado, respaldados por un sistema de valoraciones que garantiza la reputación de la comunidad.\n\n03. Arquitectura y Pasarela Financiera\nFlujos de Pago con Stripe: Mi enfoque principal fue la integración de una lógica financiera compleja. Implementé el sistema de retenciones de depósito para alquileres y las transferencias automáticas, asegurando que el flujo de capital sea transparente y protegido para ambas partes.\nSincronización en Tiempo Real: Utilicé Supabase (PostgreSQL) para gestionar la autenticación y la base de datos, permitiendo que la actualización de inventarios y el historial de transacciones se reflejen de forma instantánea en la app.\nDesarrollo Multiplataforma con Flutter: Construí una interfaz reactiva y de alto rendimiento que prioriza la velocidad en la carga de catálogos visuales y la fluidez en el proceso de checkout, garantizando una experiencia consistente en iOS y Android.\n\n04. El Impacto\nSafe Rent transforma el comercio informal en un mercado profesionalizado. El resultado es una plataforma donde la trazabilidad total de los pagos y la gestión automatizada de garantías reducen el riesgo operativo al mínimo, permitiendo a los usuarios generar ingresos extra o ahorrar costos mediante un consumo más inteligente y responsable.",
+    "githubUrl": "https://github.com/Kusuoig/saferent",
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Supabase",
+      "Stripe"
+    ],
+    "images": [
+      "/assets/saferent/home_image.png",
+      "/assets/saferent/login_image.png",
+      "/assets/saferent/profile_image.png"
     ]
   }
 ]

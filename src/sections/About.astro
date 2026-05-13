@@ -1,70 +1,113 @@
 ---
-// src/sections/About.astro
 ---
 
-<section id="sobre-mi" class="py-24 relative overflow-hidden min-h-[80vh] flex items-center about-section opacity-0 translate-y-12">
+<section
+  id="sobre-mi"
+  class="py-24 relative overflow-hidden min-h-[80vh] flex items-center about-section opacity-0 translate-y-12"
+>
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-    
     <div class="lg:col-span-5 relative">
-      <div class="aspect-[4/5] relative rounded-2xl overflow-hidden border border-primary/20 p-2 shadow-2xl">
-        <div class="w-full h-full bg-surface/50 rounded-xl relative overflow-hidden group">
-          <div class="absolute inset-0 bg-secondary/10 mix-blend-overlay z-10 transition-opacity duration-500 group-hover:opacity-0"></div>
-          <img 
-            src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2070&auto=format&fit=crop" 
-            alt="Diego Villalobos - Software Developer" 
-            class="object-cover w-full h-full filter saturate-110 sepia-[.2] group-hover:scale-105 transition-transform duration-700" 
+      <div
+        class="aspect-4/5 relative rounded-2xl overflow-hidden border border-primary/20 p-2 shadow-2xl"
+      >
+        <div
+          class="w-full h-full bg-surface/50 rounded-xl relative overflow-hidden group"
+        >
+          <div
+            class="absolute inset-0 bg-secondary/10 mix-blend-overlay z-10 transition-opacity duration-500 group-hover:opacity-0"
+          >
+          </div>
+          <img
+            src="/assets/yo.jpeg"
+            alt="Diego Villalobos - Software Developer"
+            class="object-cover w-full h-full filter saturate-110 sepia-[.2] group-hover:scale-105 transition-transform duration-700"
             loading="lazy"
           />
         </div>
-        
+
         {/* Adornos UI cálidos */}
-        <div class="absolute -top-3 -right-3 w-16 h-16 border-t-2 border-r-2 border-primary rounded-tr-lg"></div>
-        <div class="absolute -bottom-3 -left-3 w-16 h-16 border-b-2 border-l-2 border-secondary rounded-bl-lg"></div>
+        <div
+          class="absolute -top-3 -right-3 w-16 h-16 border-t-2 border-r-2 border-primary rounded-tr-lg"
+        >
+        </div>
+        <div
+          class="absolute -bottom-3 -left-3 w-16 h-16 border-b-2 border-l-2 border-secondary rounded-bl-lg"
+        >
+        </div>
       </div>
     </div>
 
     <div class="lg:col-span-7">
-      <h2 class="text-[clamp(2rem,4vw,3.5rem)] font-display font-bold text-text-main mb-6">
-        <span class="text-primary italic">Transformando</span> ideas en<br/> interfaces con propósito.
+      <h2
+        class="text-[clamp(2rem,4vw,3.5rem)] font-display font-bold text-text-main mb-6"
+        data-i18n="about.title"
+      >
+        <span class="text-primary italic">Transforming</span> ideas into<br /> purposeful
+        interfaces.
       </h2>
-      
-      <div class="space-y-6 text-lg text-text-main/80 font-body leading-relaxed mb-10">
-        <p>
-          Soy estudiante de 6º semestre de ingeniería, con la firme convicción de que el código no solo debe funcionar, sino también inspirar. Mi enfoque une el desarrollo <strong class="text-primary font-medium">Full Stack</strong> con una aguda sensibilidad por la <strong class="text-primary font-medium">UI/UX</strong>.
-        </p>
-        <p>
-          Adoptando la filosofía del <strong class="text-secondary font-medium">Warm Minimalism</strong>, construyo ecosistemas digitales que priorizan la fluidez, la accesibilidad y un diseño espacioso. Cada componente está pensado para ofrecer una experiencia premium y sin fricciones.
+
+      <div
+        class="space-y-6 text-lg text-text-main/80 font-body leading-relaxed mb-10"
+      >
+        <p data-i18n="about.p1">
+          I am a 6th-semester engineering student with the firm conviction that
+          code should not only work, but also inspire. My approach merges <strong
+            class="text-primary font-medium">Full Stack</strong
+          > development with an acute sensibility for <strong
+            class="text-primary font-medium">UI/UX</strong
+          >.
         </p>
       </div>
 
       <div class="flex flex-wrap gap-4 font-mono text-sm">
-        <a href="#contacto" class="bg-primary text-background px-6 py-3 rounded hover:bg-primary/90 transition-colors">
-          Contactar_
+        <a
+          href="#contacto"
+          class="bg-primary text-background px-6 py-3 rounded hover:bg-primary/90 transition-colors"
+          data-i18n="about.contactBtn"
+        >
+          Contact_
         </a>
-        <a href="#stack" class="border border-white/10 text-text-main px-6 py-3 rounded hover:border-secondary hover:text-secondary transition-colors">
+        <a
+          href="#stack"
+          class="border border-white/10 text-text-main px-6 py-3 rounded hover:border-secondary hover:text-secondary transition-colors"
+          data-i18n="about.stackBtn"
+        >
           &lt;Stack /&gt;
         </a>
-        <a href="/cv-diego.pdf" target="_blank" class="flex items-center gap-2 text-text-main/60 hover:text-primary transition-colors px-4 py-3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <a
+          href="/cv/Diego_VIllalobos_Cv.pdf"
+          target="_blank"
+          class="flex items-center gap-2 text-text-main/60 hover:text-primary transition-colors px-4 py-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          CV
+          <span data-i18n="about.cv">Resume</span>
         </a>
       </div>
     </div>
-
   </div>
 </section>
 
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  
+
   gsap.registerPlugin(ScrollTrigger);
-  
-  document.addEventListener('DOMContentLoaded', () => {
+
+  document.addEventListener("DOMContentLoaded", () => {
     // Animación Slide and Reveal interactiva bidireccional (Loop)
     gsap.to(".about-section", {
       opacity: 1,
@@ -76,7 +119,7 @@
         start: "top 85%",
         end: "bottom 15%",
         toggleActions: "play reverse play reverse",
-      }
+      },
     });
   });
 </script>

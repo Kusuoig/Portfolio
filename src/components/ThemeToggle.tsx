@@ -46,7 +46,7 @@ export default function ThemeToggle() {
         initial={false}
         animate={{ rotate: theme === 'light' ? 0 : -90, scale: theme === 'light' ? 1 : 0 }}
         transition={{ type: "spring", stiffness: 200, damping: 10 }}
-        className="text-primary flex items-center justify-center p-[2px]"
+        className="text-primary flex items-center justify-center p-0.5"
       >
         <Sun size={20} />
       </motion.div>
