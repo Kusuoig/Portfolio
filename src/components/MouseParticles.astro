@@ -4,13 +4,18 @@
 
 <div
   id="particle-container"
-  class="pointer-events-none fixed inset-0 z-100 overflow-hidden"
+  class="pointer-events-none fixed inset-0 z-100 overflow-hidden hidden md:block"
   aria-hidden="true"
 >
 </div>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // Desactivar en dispositivos táctiles o móviles
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches || window.innerWidth < 768) {
+      return;
+    }
+
     const container = document.getElementById("particle-container");
     if (!container) return;
 
