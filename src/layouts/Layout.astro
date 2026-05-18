@@ -96,6 +96,7 @@ const { title } = Astro.props;
     <CustomCursor client:load />
 
     <script>
+      import "lenis/dist/lenis.css";
       import Lenis from "lenis";
       import { currentLang } from "../store/i18n";
       import { translations } from "../data/translations";
@@ -113,19 +114,10 @@ const { title } = Astro.props;
       // Inicialización de Smooth Scrolling global con Lenis
       document.addEventListener("DOMContentLoaded", () => {
         const lenis = new Lenis({
-          duration: 1.2,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing suave
-          orientation: "vertical",
-          gestureOrientation: "vertical",
+          autoRaf: true,
+          lerp: 0.1, // lerp es más fluido que duration estático
           smoothWheel: true,
         });
-
-        function raf(time: number) {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        }
-
-        requestAnimationFrame(raf);
       });
     </script>
     <Analytics />
