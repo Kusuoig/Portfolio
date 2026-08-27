@@ -71,15 +71,21 @@ const ProjectCard = ({ project }: { project: Project }) => {
     });
   };
 
+  const handleCardClick = () => {
+    window.location.href = `/project/${project.id}`;
+  };
+
   return (
     <motion.div
       layoutId={`card-${project.id}`}
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 300, damping: 10 }}
+      onClick={handleCardClick}
+      whileHover={{ scale: 1.03, y: -6 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="bg-surface rounded-xl p-6 border border-white/5 hover:border-primary/30 transition-colors group flex flex-col h-full relative overflow-hidden"
+      className="bg-surface rounded-xl p-6 border border-white/5 hover:border-primary/40 transition-colors group flex flex-col h-full relative overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:shadow-primary/5"
     >
       {/* Bounce Bubble Effect */}
       <motion.div
@@ -103,20 +109,41 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
       {/* Contenido (debe estar por encima de la burbuja) */}
       <div className="relative z-10 flex flex-col grow">
-        {/* 2. Hover lighting effect on the image */}
-        <div className="relative mb-6 rounded-lg overflow-hidden h-40">
-          <img src={project.images?.[0]} alt={project.title} className="object-cover w-full h-full" />
-          <motion.div
-            className="absolute pointer-events-none inset-0 transition-opacity duration-300"
-            style={{
-              background: `radial-gradient(150px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(100,100,255,0.2), transparent)`,
-              opacity: isHovered ? 1 : 0
-            }}
-          />
+        {/* 2. Image / Mockup Container Preview */}
+        <div className="relative mb-6 rounded-lg overflow-hidden h-44 bg-neutral-950/90 border border-white/10 flex flex-col shadow-inner">
+          {project.id !== 'safe-rent-app' && (
+            /* Mini PC / Browser Header solo para proyectos de escritorio (Anfitr y Cisco) */
+            <div className="w-full bg-neutral-900/90 border-b border-white/10 px-3 py-1.5 flex items-center justify-between select-none shrink-0">
+              <div className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-[#FF5F56]" />
+                <span className="w-2 h-2 rounded-full bg-[#FFBD2E]" />
+                <span className="w-2 h-2 rounded-full bg-[#27C93F]" />
+              </div>
+              <div className="bg-neutral-950/80 px-2 py-0.5 rounded text-[9px] font-mono text-white/50 border border-white/5 truncate max-w-[130px]">
+                {project.id === 'anfitr-app' ? 'anfitr.app' : 'cisco-pkt.io'}
+              </div>
+              <div className="w-6" />
+            </div>
+          )}
+
+          <div className="relative w-full flex-1 overflow-hidden bg-black/40">
+            <img
+              src={project.images?.[0]}
+              alt={project.title}
+              className={`w-full h-full ${project.id === 'safe-rent-app' ? 'object-contain object-center' : 'object-cover object-top'} group-hover:scale-105 transition-transform duration-500 ease-out`}
+            />
+            <motion.div
+              className="absolute pointer-events-none inset-0 transition-opacity duration-300"
+              style={{
+                background: `radial-gradient(150px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(100,100,255,0.2), transparent)`,
+                opacity: isHovered ? 1 : 0
+              }}
+            />
+          </div>
         </div>
 
         {/* Header y Rol */}
-        <motion.div layoutId={`title-${project.id}`} className="text-xl font-display text-text-main group-hover:text-primary transition-colors">
+        <motion.div layoutId={`title-${project.id}`} className="text-xl font-display text-text-main group-hover:text-primary transition-colors duration-300">
           {project.title}
         </motion.div>
         <motion.p layoutId={`role-${project.id}`} className="text-sm font-mono text-text-main/60 mt-2 mb-4">
@@ -124,7 +151,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </motion.p>
 
         {/* Descripción */}
-        <motion.p layoutId={`desc-${project.id}`} className="text-text-main/80 text-sm grow line-clamp-3">
+        <motion.p layoutId={`desc-${project.id}`} className="text-text-main/80 text-sm grow line-clamp-3 leading-relaxed">
           {t[`project.${project.id}.shortDesc`] || project.shortDescription}
         </motion.p>
 
@@ -142,7 +169,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             return (
               <span
                 key={tech}
-                className="text-text-main text-[10px] font-semibold px-2 py-1 rounded border"
+                className="text-text-main text-[10px] font-semibold px-2 py-1 rounded border transition-colors"
                 style={{
                   backgroundColor: isDark
                     ? hexToRgba(color, 0.3) // Fondo oscuro sutil
@@ -164,23 +191,23 @@ const ProjectCard = ({ project }: { project: Project }) => {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-text-main/60 hover:text-primary transition-colors flex items-center gap-2 text-sm font-mono"
+            onClick={(e) => e.stopPropagation()}
+            className="text-text-main/60 hover:text-primary transition-colors flex items-center gap-2 text-sm font-mono z-30"
           >
             <FaGithub className="w-4 h-4" />
             <span dangerouslySetInnerHTML={{ __html: t['project.repo'] || '&lt;GitHub /&gt;' }} />
           </a>
 
-          <a
-            href={`/project/${project.id}`}
-            className="bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2 rounded-lg text-sm font-medium transition-all"
+          <div
+            className="bg-primary/10 group-hover:bg-primary group-hover:text-background text-primary px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-1 group-hover:translate-x-1"
           >
             {t['project.learnMore'] || 'Conocer más →'}
-          </a>
+          </div>
         </div>
       </div>
     </motion.div>
   );
-}
+};
 
 export default function ProjectGrid() {
   const lang = useStore(currentLang);

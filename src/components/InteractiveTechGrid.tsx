@@ -2,9 +2,8 @@ import { motion, type Variants } from 'framer-motion';
 import MagneticWrapper from './MagneticWrapper.tsx';
 import { FiFigma } from "react-icons/fi";
 import { TbBrandNextjs } from "react-icons/tb";
-import { FaGitAlt,FaAws, FaGithub, FaNodeJs, FaReact, FaPython, FaDocker } from "react-icons/fa6";
-import { ImNpm } from "react-icons/im";
-import { SiAstro, SiTailwindcss, SiTypescript, SiPostgresql, SiGsap, SiNestjs } from "react-icons/si";
+import { FaGitAlt, FaNodeJs, FaReact, FaDocker } from "react-icons/fa6";
+import { SiAngular, SiTailwindcss, SiTypescript, SiPostgresql, SiNestjs, SiSupabase, SiFlutter } from "react-icons/si";
 import { useState, useEffect } from 'react';
 
 
@@ -50,29 +49,30 @@ export default function InteractiveTechGrid() {
     return () => observer.disconnect();
   }, []);
 
-const techData = [
-    { name: 'React/Native', color: '#58C4DC', contrast: null, icon: <FaReact /> },
-    { name: 'AWS /Cloud', color: '#FF5D01', contrast: null, icon: <FaAws /> },
-    { name: 'Tailwind', color: '#00BCFF', contrast: null, icon: <SiTailwindcss /> },
-    { name: 'TypeScript/Js', color: '#3178C6', contrast: null, icon: <SiTypescript /> },
-    { name: 'Node.js', color: '#5FA04E', contrast: null, icon: <FaNodeJs /> },
+  const techData = [
+    { name: 'Angular', color: '#DD0031', contrast: null, icon: <SiAngular /> },
+    { name: 'React / Native', color: '#58C4DC', contrast: null, icon: <FaReact /> },
     { 
       name: 'Next.js', 
       color: isDark ? '#FFFFFF' : '#000000', 
       contrast: isDark ? '#000000' : '#FFFFFF', 
       icon: <TbBrandNextjs /> 
     },
-    { name: 'PostgreSQL/SQL', color: '#356892', contrast: null, icon: <SiPostgresql /> },
-    { name: 'Framer Motion', color: '#CB3D3C', contrast: null, icon: <ImNpm /> },
+    { name: 'TypeScript', color: '#3178C6', contrast: null, icon: <SiTypescript /> },
+    { name: 'Node.js', color: '#5FA04E', contrast: null, icon: <FaNodeJs /> },
+    { name: 'NestJS', color: '#EA284C', contrast: null, icon: <SiNestjs /> },
+    { name: 'PostgreSQL', color: '#356892', contrast: null, icon: <SiPostgresql /> },
+    { name: 'Supabase', color: '#3ECF8E', contrast: null, icon: <SiSupabase /> },
+    { name: 'Tailwind CSS', color: '#00BCFF', contrast: null, icon: <SiTailwindcss /> },
+    { name: 'Docker', color: '#2496ED', contrast: null, icon: <FaDocker /> },
+    { name: 'Flutter', color: '#02569B', contrast: null, icon: <SiFlutter /> },
     { 
       name: 'Figma', 
       color: isDark ? '#FFFFFF' : '#000000', 
       contrast: isDark ? '#000000' : '#FFFFFF', 
       icon: <FiFigma /> 
     },
-    { name: 'GSAP', color: '#0AE448', contrast: null, icon: <SiGsap /> },
-    { name: 'Nest.js', color: '#EA284C', contrast: null, icon: <SiNestjs /> },
-    { name: 'Git/Github', color: '#F05639', contrast: null, icon: <FaGitAlt /> },
+    { name: 'Git/GitHub', color: '#F05639', contrast: null, icon: <FaGitAlt /> },
   ];
 
   return (

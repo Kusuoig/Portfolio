@@ -20,12 +20,12 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Portafolio Profesional - Full Stack Developer & UI/UX Designer"
+      content="Diego Villalobos — Full Stack Developer & UI/UX Designer. Construyendo productos web y móviles con Angular, React, Node.js y Supabase."
     />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-
+ 
     {/* Fuentes: Syne, Plus Jakarta Sans, JetBrains Mono */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -79,7 +79,7 @@ const { title } = Astro.props;
       <div class="container mx-auto px-6 flex justify-between items-center">
         <span
           class="font-display font-bold text-xl text-text-main tracking-tighter"
-          >{"<Dev/>"}
+          >&lt;diego&gt;
         </span>
         <div class="flex items-center gap-6">
           <LanguageToggle client:load />
@@ -107,6 +107,13 @@ const { title } = Astro.props;
           const key = el.getAttribute("data-i18n");
           if (key && translations[lang][key]) {
             el.innerHTML = translations[lang][key];
+          }
+        });
+
+        document.querySelectorAll("[data-i18n-href]").forEach((el) => {
+          const key = el.getAttribute("data-i18n-href");
+          if (key && translations[lang][key]) {
+            (el as HTMLAnchorElement).href = translations[lang][key];
           }
         });
       });

@@ -3,8 +3,8 @@
     "id": "anfitr-app",
     "title": "Anfitr",
     "role": "Full Stack Developer",
-    "shortDescription": "Plataforma web Full Stack orientada a la media estancia, con arquitectura de tres roles, pagos recurrentes y SSR para un SEO óptimo.",
-    "description": "01. El Problema\nEncontrar alojamiento temporal como estudiante o profesional en movilidad suele ser frustrante: el mercado tradicional pide contratos largos, y las plataformas turísticas no están pensadas para semanas o meses. Anfitr nació para cubrir ese hueco, ofreciendo un entorno donde la flexibilidad y la seguridad coexisten.\n\n02. Tres Roles, un Solo Flujo\nLa plataforma distingue tres perfiles con permisos y flujos bien definidos:\n- Anfitrión: gestiona calendarios de disponibilidad, verifica inquilinos y automatiza el cobro mensual.\n- Inquilino: filtra propiedades, sube documentación y realiza pagos de depósito y renta de forma segura.\n- Moderador: audita la veracidad de los inmuebles y la identidad de los usuarios para mantener la confianza en la comunidad.\n\n03. Stack y Decisiones Técnicas\nSSR con Angular 20: optamos por Server-Side Rendering para lograr tiempos de carga rápidos y que cada propiedad sea indexable en buscadores.\nPagos recurrentes: implementamos lógica para depósitos en garantía y suscripciones de renta automatizadas, eliminando fricciones administrativas.\nBackend escalable: Node.js y MongoDB permiten modelar los metadatos variables de cada propiedad —servicios incluidos, zonas cercanas, estados del sistema— sin rigidez de esquema.",
+    "shortDescription": "Plataforma web full stack para estancias medianas — arquitectura de tres roles, pagos recurrentes y Angular SSR para SEO.",
+    "description": "01. El Problema\nEncontrar alojamiento a mediano plazo siendo estudiante es complicado — los propietarios piden contratos de un año y las plataformas turísticas son caras para más de un fin de semana. Construí Anfitr para ocupar ese espacio: una plataforma para estancias de semanas o meses, no de días.\n\n02. Tres Roles, un Sistema\nLa plataforma maneja tres tipos de usuario con permisos distintos: anfitriones que publican y administran sus espacios, inquilinos que buscan, aplican y pagan, y moderadores que verifican inmuebles e identidades. El reto fue diseñar un flujo de permisos y pagos que funcione limpio para los tres sin que ningún rol se sienta descuidado.\n\n03. Stack y Decisiones\nUsamos Angular con SSR porque el SEO sí importa en una plataforma de vivienda — cada página de propiedad tiene que ser indexable. En el backend, Node.js con MongoDB maneja las suscripciones de pago recurrente y los metadatos variables de cada propiedad (servicios, disponibilidad, reglas). Docker mantiene los entornos de dev y producción consistentes entre el equipo.",
     "githubUrl": "https://github.com/Kusuoig/anfitr",
     "technologies": [
       "Angular",
@@ -15,16 +15,16 @@
     ],
     "images": [
       "/assets/anfitr/home_image.png",
-      "/assets/anfitr/room_image.png",
-      "/assets/anfitr/pay_image.png"
+      "/assets/anfitr/dashboard_image.png",
+      "/assets/anfitr/login_image.png"
     ]
   },
   {
     "id": "cisco-pkt-designer",
     "title": "Cisco PKT Designer",
-    "role": "Backend / Tooling Developer",
-    "shortDescription": "Herramienta colaborativa que automatiza la configuración CLI de redes Cisco a partir de un diseñador visual de topologías.",
-    "description": "01. El Problema\nConfigurar manualmente una topología de red compleja en Cisco CLI es lento y propenso a errores. En equipos de estudio o trabajo, ese tiempo se multiplica. Este proyecto surgió de esa necesidad real: construir entre varios una herramienta que redujera horas de configuración repetitiva a minutos.\n\n02. Un Proyecto de Equipo\nCisco PKT Designer fue desarrollado en colaboración con compañeros, y mi participación se concentró en el puente entre el frontend y el backend. Nos repartimos el trabajo de forma clara: mientras otros compañeros trabajaban en la lógica de generación de scripts y la integración con Packet Tracer, yo me encargué del lado del cliente y la comunicación con el servidor.\n\n03. Mi Contribución Técnica\nInterfaz profesional: diseñé la UI inspirándome en los dashboards de Cisco, con formularios dinámicos y validaciones en tiempo real que detectan conflictos de IP o errores de máscara antes de enviar datos al servidor.\nConexión JS-Flask: implementé el flujo de datos asíncrono entre el frontend en JavaScript y el backend en Flask, asegurando que cada acción del usuario generara un JSON válido y bien estructurado.\nDescarga de entregables: programé la lógica para que, tras la validación, el usuario pueda descargar directamente los scripts de configuración y los archivos .pkt listos para desplegar.\n\n04. Resultado\nJunto al equipo, logramos reducir el tiempo de configuración de topologías complejas de 4 horas a menos de 30 minutos. Para mí, fue un ejercicio valioso de coordinación técnica, división de responsabilidades y entrega de una herramienta funcional con impacto real.",
+    "role": "Puente Frontend & Backend",
+    "shortDescription": "Proyecto universitario en equipo: una herramienta que convierte un diseñador visual de topologías de red en scripts de configuración Cisco CLI listos para desplegar.",
+    "description": "01. El Problema\nConfigurar una topología de red Cisco desde cero en CLI tarda horas y es propenso a errores, especialmente cuando lo hace un equipo. Construimos PKT Designer como proyecto universitario de 4 personas para reducir ese tiempo significativamente.\n\n02. Proyecto de Equipo — Mi Rol\nMi contribución fue la interfaz frontend y el puente de datos entre JS y Flask. Mientras mis 3 compañeros trabajaban en la lógica de generación de scripts y la integración con Packet Tracer, yo construí la UI con formularios dinámicos y validaciones en tiempo real de IP y máscaras, más el sistema de descarga de archivos de configuración generados.\n\n03. Resultado\nLogramos bajar el tiempo de configuración de topologías complejas de ~4 horas a menos de 30 minutos. Lo más importante para mí fue aprender a coordinar en un proyecto técnico donde cada quien tiene capas distintas y aun así necesitan contratos de datos limpios entre ellas.",
     "githubUrl": "https://github.com/omarnataren/Cisco-Pkt-net-config",
     "technologies": [
       "Python",
@@ -40,8 +40,8 @@
   {
     "id": "safe-rent-app",
     "title": "Safe Rent",
-    "role": "Mobile Developer",
-    "shortDescription": "App móvil multiplataforma para rentar y comprar artículos entre particulares, con pagos seguros y gestión de garantías integrada.",
+    "role": "Desarrollador Móvil",
+    "shortDescription": "App móvil multiplataforma para rentar y vender artículos entre particulares, con retención de depósito por Stripe y gestión de garantías integrada.",
     "description": "01. El Problema\nEl mercado de artículos de segunda mano entre particulares tiene un problema de confianza: ¿quién garantiza que el vendedor entregue lo prometido o que el comprador pague sin problemas? Safe Rent nació para darle estructura y seguridad a esas transacciones informales, transformándolas en algo tan confiable como comprar en una tienda.\n\n02. Dos Perfiles, un Marketplace Seguro\nLa app maneja dos roles complementarios:\n- Propietario: puede listar artículos para renta o venta, establecer precios, depósitos de garantía y gestionar su disponibilidad en tiempo real.\n- Usuario: accede a un catálogo verificado con filtros por categoría y estado, respaldado por un sistema de valoraciones que mantiene la reputación de la comunidad.\n\n03. Stack y Decisiones Clave\nPagos con Stripe: implementé la lógica de retención de depósitos para rentas y las transferencias automáticas entre partes, garantizando transparencia financiera en cada operación.\nSupabase (PostgreSQL): maneja la autenticación y la base de datos, con actualizaciones en tiempo real para inventarios e historial de transacciones.\nFlutter: la app corre en iOS y Android con una sola base de código, priorizando la fluidez en la navegación del catálogo y el proceso de checkout.\n\n04. Resultado\nEl proyecto resuelve un problema concreto de confianza en el comercio entre personas, con una arquitectura que automatiza las partes más críticas —pagos, garantías y verificación— para que tanto propietarios como usuarios puedan operar con tranquilidad.",
     "githubUrl": "https://github.com/Kusuoig/saferent",
     "technologies": [

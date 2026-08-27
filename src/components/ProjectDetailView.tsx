@@ -41,7 +41,7 @@ export default function ProjectDetailView({ project }: { project: Project }) {
       {/* Botón de Regreso */}
       <nav className="mb-12">
         <a
-          href="/#projects"
+          href="/#proyectos"
           className="group inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-surface/30 hover:bg-surface text-text-main/70 hover:text-text-main transition-all text-sm font-medium backdrop-blur-sm"
         >
           <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,7 +66,7 @@ export default function ProjectDetailView({ project }: { project: Project }) {
 
       {/* Carousel */}
       <div className="mb-20 md:mb-20 rounded-3xl overflow-hidden bg-surface/50 border border-white/5 shadow-2xl">
-        <ProjectDetailsCarousel images={project.images} />
+        <ProjectDetailsCarousel images={project.images} projectId={project.id} />
       </div>
 
       {/* Grid de Contenido */}
